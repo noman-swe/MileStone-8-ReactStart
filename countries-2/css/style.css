@@ -1,0 +1,21 @@
+h1{
+    color: tomato;
+    text-align: center;
+}
+
+.countries-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.country{
+    background-color: yellowgreen;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.country img{
+    width: 200px;
+}
