@@ -42,4 +42,20 @@
   background-color: rgb(211, 153, 143);
   padding: 20px;
   border-radius: 10px;
+  margin: 20px;
+  border: 2px solid purple;
 }
+
+.person{
+  color: orangered;
+  background-color: yellowgreen;
+  border: 3px solid rebeccapurple;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+
+}
+
+/* .myFriend{
+  color: salmon;
+} */
