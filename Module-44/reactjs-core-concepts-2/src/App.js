@@ -1,15 +1,53 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   return (
     <div className="App">
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <ExternalUsers> </ExternalUsers>
+
     </div>
   );
 }
+
+function ExternalUsers() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(
+    () => {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => setUsers(data));
+
+    }, []
+  );
+
+  return (
+    <div className="user">
+      <h2>Externam Users</h2>
+      <p>{users.length}</p>
+      {
+        users.map(user => <User name={user.name} email={user.email}></User>)
+      }
+    </div>
+  );
+}
+
+// 
+
+function User (props){
+return(
+  <div className="user" style={{border: '3px solid red', margin:'20px'}} >
+    <h3>Name: {props.name}</h3>
+    <p>Email: {props.email}</p>
+  </div>
+)
+}
+
+// 
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -23,7 +61,7 @@ function Counter() {
   const decreaseCount = () => {
     setCount(count - 1);
   }
-  
+
   return (
     <div className="count">
       <h1>Count:{count}</h1>
