@@ -1,0 +1,8 @@
+nav a {
+    text-decoration: none;
+    background-color: rgb(212, 83, 36);
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: rgb(75, 9, 9);
+}
