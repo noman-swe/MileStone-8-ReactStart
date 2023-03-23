@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -18,10 +19,18 @@ const districtStyle = {
 }
 
 function District(props) {
+  const [power, setPower] = useState(1);
+ 
+  const boostPower = () => {
+    const newPower = power * 2;
+    setPower(newPower);
+  }
   return (
     <div className="district" style={districtStyle}>
       <h2>Name:{props.name}</h2>
       <p>Speciality:{props.special}</p>
+      <h4>Power:{power}</h4>
+      <button onClick={boostPower}>Boost The Power</button>
     </div>
   );
 }
