@@ -5,10 +5,10 @@ import Watch from './components/Watch/Watch';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Device name='IPhone' price='13000'></Device>
-        <Watch></Watch>
-      </header>
+
+      <Device name='IPhone' price='13000'></Device>
+      <Watch></Watch>
+
     </div>
   );
 }
