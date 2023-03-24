@@ -1,0 +1,21 @@
+#1-
+create react-app hocchy ekta CLI (Command Line Interface)
+npx - node pakage execute
+
+#2-
+jSX in depth - poro, Babel-site e react er component gulo k js e convert kore dekhano hoy
+JSX - Javascript XML
+JSX er sahajje  HTML code gulo Javascript er moddhy shohoj ei likha jay. abr HTM code er moddhyoo Javascript er expression gulo use kora jay {} er shahajje.
+Markup language and logic ke alada file e na rekhe aki sathy proyojon-moto ek-e file e rakha jay.. er jonno react component use kora jay.
+
+#3
+props hocchy read only type data.. er value majhKhan e kothaw set kora jabe na.. value change korte hole age mane start ei korte hobe mane props e pathanor agei..
+
+#4
+useEffect(,[]) er empty array tar nam dependency
+
+#7
+what is react virtual dom, react fiber, diff
+
+#8
+React Class Component, Component lifecycle and rerender
