@@ -10,7 +10,7 @@ const Shoes = () => {
         <div>
             <h3>This is shoes compo</h3>
             <h5>Juta: {totalJuta}</h5>
-        </div>
+        </div> 
     );
 };
 
