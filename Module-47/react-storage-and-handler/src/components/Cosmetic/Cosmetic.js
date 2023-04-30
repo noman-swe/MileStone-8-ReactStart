@@ -1,21 +1,22 @@
 import React from 'react';
 import './Cosmetic.css';
+import { addTodb } from '../../utilities/fakedb';
 
 const Cosmetic = props => {
     const {name, price, id} = props.cosmetic;
 
     const addToCart = id => {
-        console.log('item added', id);
+        addTodb(id);
     }
 
-    const addToCartWithPerameter = () => addToCart(id);//function wrapper
+    // const addToCartWithPerameter = () => addToCart(id);//-->function wrapper
 
     return (
         <div className='cosmetic'>
             <h3>Buy this Cosmetic : {name} </h3>
             <p>Price :  {price} </p>
-            <button onClick={addToCartWithPerameter}>Add to Cart</button>
-            <button onClick={() => addToCart(id)}>Add to Cart Shortcut</button>
+            {/* <button onClick={addToCartWithPerameter}>Add to Cart</button> */}
+            <button onClick={() => addToCart(id)}>Add to Cart</button>
         </div>
     );
 };
