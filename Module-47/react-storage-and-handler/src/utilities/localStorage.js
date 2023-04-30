@@ -1,13 +1,20 @@
 // local storage saves
 const addToLocal = id => {
-    const quantity = localStorage.getItem(id);
-    if(quantity){
-        const newQuantity = parseInt(quantity) + 1;
-        localStorage.setItem(id, newQuantity);
+    let shoeCart = {};
+    const storedShoes = localStorage.getItem('shoe-cart');
+    if (storedShoes) {
+        shoeCart = JSON.parse(storedShoes);
     }
-    else{
-        localStorage.setItem(id, 1);
+
+    const quantity = shoeCart[id];
+    if (quantity) {
+        const newQuantity = quantity + 1;
+        shoeCart[id] = newQuantity;
     }
+    else {
+        shoeCart[id] = 1;
+    }
+    localStorage.setItem('shoe-cart', JSON.stringify(shoeCart));
 }
 
-export {addToLocal}
+export { addToLocal }
