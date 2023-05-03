@@ -1,8 +1,7 @@
 import React from 'react';
 import Cosmetic from '../Cosmetic/Cosmetic';
-// import minus from '../../utilities/cal';
-// import { add } from '../../utilities/calculate';
 import './cosmetics.css';
+import { getTotal } from '../../utilities/calculate';
 
 
 
@@ -49,12 +48,15 @@ const Cosmetics = () => {
           "name": "Alexander Little"
         }
       ];
+
+      const total = getTotal(cosmetics);
     
     return (
         <div className='cosmetics'>
             <h3>This is cosmetics.</h3>
             {/* <p>{total}</p>
             <p>Minus = {calMinus}</p> */}
+            <p>Money Needed: {total}</p>
             
             {
                 cosmetics.map(cosmetic => <Cosmetic

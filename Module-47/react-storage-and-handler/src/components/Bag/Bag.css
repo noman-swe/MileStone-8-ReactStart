@@ -1,0 +1,28 @@
+.container {
+    /* background-color: yellowgreen; */
+}
+
+.child {
+    border: 2px solid rgb(47, 92, 230);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    justify-items: center;
+    background-color: rgb(115, 169, 202);
+}
+
+.child>button{
+    background-color: rgb(238, 111, 52);
+    border-radius: 30px;
+    padding: 6px 16px;
+}
+
+h4 span{
+    color:  rgb(228, 81, 12);
+}
+p b{
+    color:  rgb(235, 7, 102);
+}
