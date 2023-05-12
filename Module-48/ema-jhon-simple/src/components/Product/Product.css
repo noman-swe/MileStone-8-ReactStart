@@ -38,6 +38,14 @@
     border-radius: 0px 0px 8px 8px;
     position: absolute;
     bottom: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.button-cart p {
+    margin-right: 5px;
 }
 
 .button-cart:hover {
