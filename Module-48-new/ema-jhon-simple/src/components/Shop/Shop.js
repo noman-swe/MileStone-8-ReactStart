@@ -9,7 +9,12 @@ const Shop = () => {
         fetch('products.json')
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, []);
+
+    // handler ta ekhan e add korte hoisy coz amra data upor theke nichy pathate pari but nichy theke upore pathaite pari na. and chaile event handler taw pathate pari.
+    const handleAddToCart = (product) => {
+        console.log(product);
+    }
 
     return (
         <div className='shop-container'>
@@ -18,7 +23,8 @@ const Shop = () => {
                 {
                     products.map(product => <Product
                          key={product.id}
-                         product = {product}            
+                         product = {product}
+                         handleAddToCart = {handleAddToCart}         
                         ></Product>)
                 }
             </div>
