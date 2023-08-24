@@ -1,0 +1,17 @@
+.header{
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 140px;
+}
+
+.header a {
+    text-decoration: none;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 0.005em;
+    font-family: 'Lato';
+}
