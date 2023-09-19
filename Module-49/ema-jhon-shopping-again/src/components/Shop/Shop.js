@@ -32,8 +32,13 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <h3>Cart container</h3>
-                <h1>Total carted Items : {cart.length}</h1>
+                <h3>Order Summary</h3>
+
+                <p>Selected Items : {cart.length}</p>
+                <p>Total Price : </p>
+                <p>Total Shipping Charge : </p>
+                <p>Tax : </p>
+                <p>Grand Total : </p>
             </div>
         </div>
     );
