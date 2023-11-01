@@ -11,34 +11,68 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
+        // console.log('Product load Before fetch ');
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
+
     }, []);
 
-    /* // getting existing data from localstorage-cart and show them in the ui section 
+    // 49-7 (super advanced) Handle quantity from storage to cart
+    useEffect(() => {
+        const storedCart = getStoredShoppingCart();
+        const savedCart = [];
+        for(const id in storedCart){
+            // console.log(id);
+            const addedProduct = products.find(product => product.id === id);
+            if(addedProduct){
+                // ekta product 1 ber e count hocchy 1 er beshi localStorage e store thaktesy na.solution bellow::
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+
+                // jodi addedProduct ta pawa jay taile cart e add korbo-- bellow:
+                savedCart.push(addedProduct);
+            }
+        }
+        setCart(savedCart);
+     }, [products])
+
+    /* 
+        // 49-5 (advanced) Load cart from local storage, find product
+        // getting existing data from localstorage-cart and show them in the ui section 
         useEffect(() => {
             const stroredCart = getStoredShoppingCart();
             for(const id in stroredCart){
-                // console.log(id);*--
-                // localStorage e j product guli asy oi dula k main products er sathy match koraye find kore nilam eikhaan e, tate oi product duli er sob attributes e access kora jacchy ekhn like: category, name, seller and others all.
+                // localStorage e j product guli asy oi dula k main products er sathy match koraye find kore nilam eikhaan e, tate oi product duli er sob elements e access kora jacchy ekhn like: category, name, seller and others all.
                 const addedProducts = products.find(product => product.id === id );
-    
-                console.log(addedProducts);
             }
          },
-            [products]); */
+        []);
+     */
 
-    // 49-5 (advanced) Load cart from local storage, find product
-    useEffect(() => {
-        const getStoredCart = getStoredShoppingCart();
-        for(const cartedId in getStoredCart){
-            // console.log(cartedId);
-            const cartAddedProductFromAllProducts = products.find(product => product.id === cartedId);
-
-            console.log(cartAddedProductFromAllProducts);
-        }
-    }, [])
+    /*
+      // 49-5( again done and 49-6) (advanced) Load cart from local storage, find product
+     useEffect(() => {
+         const getStoredCart = getStoredShoppingCart();
+ 
+         // to store cartAddedProductFromAllProducts after update
+         const savedCart = [];
+ 
+         for (const storedId in getStoredCart) {
+              //49-5- localStorage e j product guli asy oi dula k main products er sathy match koraye find kore nilam eikhaan e, tate oi product duli er sob elements e access kora jacchy ekhn like: category, name, seller and others all.
+             const cartAddedProductFromAllProducts = products.find(product => product.id === storedId);
+             
+             //bellowpart: 49-6 (advanced) Display local storage cart to the UI
+             if (cartAddedProductFromAllProducts) {
+                 const quantity = getStoredCart[storedId];
+                 cartAddedProductFromAllProducts.quantity = quantity;
+                 savedCart.push(cartAddedProductFromAllProducts);
+             }
+         }
+ 
+         setCart(savedCart);
+     }, [products])
+    */
 
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];

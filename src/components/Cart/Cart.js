@@ -4,12 +4,18 @@ import './Cart.css';
 const Cart = (props) => {
     const { cart } = props;
 
+    console.log(cart);
+
     let total = 0;
     let shipping = 0;
 
+    // to calculate and show in ui quantity of shopping
+    let quantity = 1;
+
     for (const product of cart) {
-        total = total + product.price;
-        shipping = shipping + product.shipping;
+        quantity = quantity + product.quantity;
+        total = total + product.price * product.quantity;
+        shipping = shipping + product.shipping * product.quantity;
         // console.log(product.shipping);
     }
 
@@ -23,7 +29,8 @@ const Cart = (props) => {
         <div className='cart'>
             <h3>Order Summary</h3>
 
-            <p>Selected Items : {cart.length} </p>
+            {/* //cart length hisheb na kore quantity hisheb korte hobe; <p>Selected Items : {cart.length} </p> */}
+            <p>Selected Items : {quantity} </p>
             <p>Total Price : ${total}</p>
             <p>Total Shipping Charge : {shipping}</p>
             <p>Tax : {tax} </p>
