@@ -1,5 +1,5 @@
 const addToDbPractice = id => {
-    let cartObj = getShoppingCart();
+    let cartObj = getStoredShoppingCart();
 
     //add quantity
     const quantity = cartObj[id];
@@ -15,16 +15,20 @@ const addToDbPractice = id => {
 
 // removeCart  
 const removeFromCart = id => {
-    const cartObj = getShoppingCart();
+    const cartObj = getStoredShoppingCart();
     if (id in cartObj) {
         delete cartObj[id];
         localStorage.setItem('ema-cart', JSON.stringify(cartObj))
     }
 }
 
+// 49-5 (advanced) Load cart from local storage, find product
+/* objective is : 
+    *
+*/
 
 // getcart function
-const getShoppingCart = () => {
+const getStoredShoppingCart = () => {
     let cartObj = {};
 
     const storedCart = localStorage.getItem('ema-cart');
@@ -41,6 +45,6 @@ const deleteShoppingCart = () => {
 export {
     addToDbPractice,
     removeFromCart,
-    getShoppingCart,
+    getStoredShoppingCart,
     deleteShoppingCart
 }
